@@ -29,5 +29,5 @@ java {
 }
 
 application {
-    mainClass = "one.theaq.mcware.AppKt"
+    mainClass = "one.theaq.mcware.MainKt"
 }
