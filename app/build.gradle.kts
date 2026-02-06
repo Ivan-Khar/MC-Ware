@@ -11,6 +11,7 @@ repositories {
 dependencies {
 
     implementation(libs.guava)
+    implementation("net.minestom:minestom:${project.property("minestom_version")}")
 }
 
 testing {
