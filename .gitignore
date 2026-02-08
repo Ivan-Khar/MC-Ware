@@ -1,10 +1,13 @@
 .gradle
 **/build/
 !**/src/**/build/
+
 .project
 .classpath
+
 build
 .idea
+.kotlin
 
 gradle-app.setting
 !gradle-wrapper.jar

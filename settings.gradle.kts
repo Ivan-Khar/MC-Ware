@@ -3,4 +3,3 @@ plugins {
 }
 
 rootProject.name = "MC-Ware"
-include("app")
