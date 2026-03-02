@@ -17,7 +17,7 @@ object DimensionRegistry {
         .height(256 + 32)
         .logicalHeight(256 + 32)
         .infiniburn("#minecraft:infiniburn_overworld")
-        .ambientLight(15f)
+        .ambientLight(1.0f)
         .monsterSpawnLightLevel(IntProvider.Uniform(0, 6))
         .monsterSpawnBlockLightLimit(0)
         .skybox(Skybox.OVERWORLD)

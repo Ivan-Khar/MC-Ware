@@ -1,7 +1,5 @@
-import org.gradle.kotlin.dsl.runtimeOnly
-
 plugins {
-    alias(libs.plugins.kotlin.jvm)
+    kotlin("jvm") version "2.3.10"
     id("com.gradleup.shadow") version "8.3.0"
 }
 
@@ -13,13 +11,10 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.guava)
-
     implementation("net.minestom:minestom:${project.property("minestom_version")}")
 
     implementation("org.apache.logging.log4j:log4j-api:${project.property("log4j_version")}")
     implementation("org.apache.logging.log4j:log4j-core:${project.property("log4j_version")}")
-    runtimeOnly("org.apache.logging.log4j:log4j-slf4j2-impl:${project.property("log4j_version")}")
 }
 
 java {
@@ -34,6 +29,7 @@ tasks.withType<JavaCompile> {
 
 tasks.register("run", JavaExec::class.java) {
     mainClass.set("one.theaq.mcware.MainKt")
+    workingDir = File("run/")
     classpath = sourceSets.main.get().runtimeClasspath
 }
 
