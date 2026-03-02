@@ -1,5 +1,6 @@
 package one.theaq.mcware
 
+import one.theaq.mcware.Main.Companion.LOGGER
 import one.theaq.mcware.dimension.DimensionRegistry
 import one.theaq.mcware.instance.InstanceRegistry
 import one.theaq.mcware.server.ServerInstance
@@ -13,6 +14,7 @@ class Main {
 }
 
 fun main() {
+    LOGGER.info("test")
     val serverInstance = ServerInstance()
 
     DimensionRegistry

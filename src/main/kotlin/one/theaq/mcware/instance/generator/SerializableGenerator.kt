@@ -6,6 +6,5 @@ import net.minestom.server.instance.generator.Generator
 
 class SerializableGenerator(path: Key): Generator {
     override fun generate(unit: GenerationUnit) {
-        // TODO
     }
 }

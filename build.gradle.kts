@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.runtimeOnly
+
 plugins {
     alias(libs.plugins.kotlin.jvm)
     id("com.gradleup.shadow") version "8.3.0"
@@ -14,8 +16,10 @@ dependencies {
     implementation(libs.guava)
 
     implementation("net.minestom:minestom:${project.property("minestom_version")}")
-    implementation("org.apache.logging.log4j:log4j-bom:${project.property("log4j_version")}")
+
     implementation("org.apache.logging.log4j:log4j-api:${project.property("log4j_version")}")
+    implementation("org.apache.logging.log4j:log4j-core:${project.property("log4j_version")}")
+    runtimeOnly("org.apache.logging.log4j:log4j-slf4j2-impl:${project.property("log4j_version")}")
 }
 
 java {

@@ -9,8 +9,8 @@ class LobbyGenerator: Generator {
         val start = unit.absoluteStart()
         val size = unit.size()
 
-        for (x in 0 ..< size.blockX()) {
-            for (z in 0 ..< size.blockZ()) {
+        for (x in 0 ..< 4) {
+            for (z in 0 ..< 4) {
                 for (y in 0 ..< (40 - start.blockY()).coerceAtMost(3)) {
                     unit.modifier().setBlock(start.add(x.toDouble(), y.toDouble(), z.toDouble()), Block.STONE)
                 }
