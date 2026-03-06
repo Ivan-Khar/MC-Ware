@@ -3,6 +3,7 @@ package one.theaq.mcware.server
 import net.minestom.server.coordinate.Pos
 import net.minestom.server.entity.GameMode
 import net.minestom.server.event.GlobalEventHandler
+import net.minestom.server.event.instance.InstanceTickEvent
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent
 import net.minestom.server.event.player.PlayerDisconnectEvent
 import one.theaq.mcware.instance.InstanceRegistry
@@ -11,7 +12,8 @@ class GlobalEvents(val globalEventHandler: GlobalEventHandler) {
     fun registerEvents() {
         globalEventHandler.addListener(AsyncPlayerConfigurationEvent::class.java, ::asyncPlayerConfiguration)
         globalEventHandler.addListener(PlayerDisconnectEvent::class.java, ::playerDisconnectEvent)
-    }
+	    globalEventHandler.addListener(InstanceTickEvent::class.java, ::serverTickEvent)
+		}
 
     fun asyncPlayerConfiguration(event: AsyncPlayerConfigurationEvent) {
         val player = event.player
@@ -29,4 +31,8 @@ class GlobalEvents(val globalEventHandler: GlobalEventHandler) {
             println("${instance.uuid} is empty")
         }
     }
+	
+	fun serverTickEvent(event: InstanceTickEvent) {
+	
+	}
 }
