@@ -14,6 +14,7 @@ object InstanceRegistry {
 		val instanceManager = MinecraftServer.getInstanceManager()
 		val instance = instanceManager.createInstanceContainer(dimensionType)
 		instance.chunkLoader = AnvilLoader(worldPath)
+		instance.timeSynchronizationTicks = 40
 		return instance
 	}
 }

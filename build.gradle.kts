@@ -8,10 +8,18 @@ version = "${project.property("mc_ware_version")}"
 
 repositories {
 	mavenCentral()
+	maven {
+		name = "asordaPublic"
+		url = uri("https://mvn.everbuild.org/public")
+	}
 }
 
 dependencies {
 	implementation("net.minestom:minestom:${project.property("minestom_version")}")
+	
+	implementation("org.everbuild.blocksandstuff:blocksandstuff-common:${project.property("blocksandstuff_version")}")
+	implementation("org.everbuild.blocksandstuff:blocksandstuff-blocks:${project.property("blocksandstuff_version")}")
+	implementation("org.everbuild.blocksandstuff:blocksandstuff-fluids:${project.property("blocksandstuff_version")}")
 	
 	implementation("org.apache.logging.log4j:log4j-api:${project.property("log4j_version")}")
 	implementation("org.apache.logging.log4j:log4j-core:${project.property("log4j_version")}")
